@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<style type="text/css">
+	.circle {
+margin-left: auto;
+margin-right: auto;
+border-radius: 50%;
+width: 100%;
+position: relative;
+}
+
+.circle-border {
+border: 15px solid black;
+}
+
+.circle-solid{
+background-color: whitesmoke;
+}
+
+.circle:before {
+content: "";
+display: block;
+padding-top: 100%;
+}
+
+.circle-inner {
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+text-align: center;
+}
+
+.score-text {
+margin: auto;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+height: 1em;
+line-height: 1em;
+font-size: 1em;
+}
+
+.score-text {
+height: 3vw;
+line-height: 3vw;
+font-size: 3vw;
+}
+</style>
+
+     <div class="container">
+      <div class="row">
+      	<div class="col-md-5">
+     <canvas id="bar-chart" width="800" height="450"></canvas>
+      	</div>
+      </div>
+      <div class="row">
+      	<div class="col-md-6">
+      		<div class="circle circle-border">
+     <div class="circle-inner">
+         <div class="score-text">
+            2.5
+          </div>
+     </div>
+</div>
+      	</div>
+      </div>
+
+      </div>
+         
+            
+   <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>  
+   <script src="../../bootstrap/js/bootstrap.min.js"></script>         
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+
+<script type="text/javascript">
+  new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["May", "Jun", "Jul", "Aug", "Sept", "Oct" , "Nov" , "Dec" , "Jan" , "Feb", "Mar", "Apr"],
+      datasets: [
+        {
+          label: "Monthly Search Volume",
+          backgroundColor: "#3e95cd",
+          data: [2478,5267,734,784,433,2478,5267,734,784,433,433,784]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: 'Predicted world population (millions) in 2050'
+      },
+      responsive: true
+    }
+});
+
+
+</script>
+
+
+
+<!-- <script src="../../dist/js/pages/Chart.min.js"></script> -->
+</body>
+</html>
