@@ -24,7 +24,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
-  
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.bootstrap.min.css"> -->
 </head>
 
 <body class="hold-transition skin-blue ">
@@ -221,6 +222,11 @@ font-size: 3vw;
     position: relative;
     top: -6px;
 }
+
+/*#buttons {
+  background: #91CB3E;
+  padding: 40px;
+}*/
    </style>
   <!-- Main Header -->
   <header class="main-header">
@@ -420,7 +426,7 @@ font-size: 3vw;
               <div class="col-md-3">
                 <input type="text" class="form-control" name="Language" placeholder="Language">
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2" ">
                   <input type="submit"  class="button" value="Find Keyword">
                </div>
              </div>
@@ -434,20 +440,21 @@ font-size: 3vw;
               <div class="col-md-6 ">
                  <div class="row">
                    <div class="col-sm-12">
-                     <table id="exportTable"  class="table table-bordered table-striped">
+                     <table id="table" data-toggle="table"   class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th >Suggestion</th>
-                  <th data-toggle="tooltip" data-container="body" title="Average Search Volume">Search Volume<i class="fa fa-question-circle" aria-hidden="true"></i></th>
-                  <th data-toggle="tooltip" data-container="body" title="Average Cost per Click">CPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
-                  <th data-toggle="tooltip" data-container="body"  title="Level of competiton in PPC Advertising">PPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
-                  <th data-toggle="tooltip" data-container="body" title="Golden Keyword Ratio">GKR<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+                  <th data-field="state" data-checkbox="true"></th>
+                  <th data-field="Suggestion">Suggestion</th>
+                  <th data-field="Search_Volume" data-toggle="tooltip" data-container="body" title="Average Search Volume">Search Volume<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+                  <th data-field="CPC"  data-toggle="tooltip" data-container="body" title="Average Cost per Click">CPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+                  <th data-field="PPC"  data-toggle="tooltip" data-container="body"  title="Level of competiton in PPC Advertising">PPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+                  <th data-field="GKR" data-toggle="tooltip" data-container="body" title="Golden Keyword Ratio">GKR<i class="fa fa-question-circle" aria-hidden="true"></i></th>
                   <!-- <th>Search Volume</th> -->
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                
+                   <td></td>
                   <td> Black suits  </td>
                   <!-- <td>test</td> -->
                   <td>500</td>
@@ -456,69 +463,16 @@ font-size: 3vw;
                   <td>0.25</td>
                   
                 </tr>
-                <!-- <tr>
+                <tr>
+                  <td></td>
                   <td>Tuxedo</td>
                   <td>2500</td>
                   <td>4.0</td>
                   <td>5</td>
                   <td>0.9</td>
                 </tr>
-                <tr>
-                  <td>Dark Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Dark Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Dark Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Green Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Green Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Green Suits</td>
-                  <td>4</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Green Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Green Suits</td>
-                  <td>404</td>
-                  <td>3.4</td>
-                  <td>2</td>
-                  <td>2</td>
-                </tr> -->
+                
+                
                  </tbody>
                 
               </table>
@@ -529,8 +483,9 @@ font-size: 3vw;
                  </div>
                  <br>
                  <div class="row">
-                   <div class="col-sm-4 col-sm-offset-8">
-          <input id="exportbtn" type="submit"  class="button btn btn-lg btn-block" value="Export">
+                   <div class="col-sm-4 col-sm-offset-8 ">
+          <!-- <input id="exportbtn" type="submit"  class="button btn btn-lg btn-block" value="Export"> -->
+           <button id="exportbtn" class="button btn btn-lg btn-block" > Export </button>
                    </div>
                  </div>
               </div>
@@ -561,7 +516,7 @@ font-size: 3vw;
                 <div class="row abox">
                  <div class="col-sm-11 col-sm-offset-1"></div>
                   <div class="col-sm-12 " >
-                    <table id="table2" class="table table-bordered table-striped" data-toggle="table"  >
+                    <table id="table2" class="table table-bordered table-striped"  >
                     <thead>
                       <th data-toggle="example" data-container="body" title="Top results from Google search for selected keyword.">Google Serp<i class="fa fa-question-circle" aria-hidden="true"></i></th>
                       <th data-toggle="example" data-container="body" title="Domain Authority ">DA<i class="fa fa-question-circle" aria-hidden="true"></i></th>
@@ -617,13 +572,15 @@ font-size: 3vw;
 <script src="../../dist/js/app.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
 <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/4.0.4/js/tableexport.js"></script> -->
+
+
+ <script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript">
   new Chart(document.getElementById("bar-chart"), {
@@ -651,6 +608,40 @@ font-size: 3vw;
 
 
 </script>
+<!-- <script >
+  $(document).ready(function() {
+   var table = $('#exportTable').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "searching": false
+    } );
+    var buttons = new $.fn.dataTable.Buttons(table, {
+      
+     buttons: [
+
+       
+       'excelHtml5'
+       
+       
+    ]
+}).container().appendTo($('#buttons'));
+} );
+</script> -->
+
+<script >
+  $(function () {
+  var $table = $('#table');
+  $('#exportbtn').click(function () {
+    $table.tableExport({
+      type: 'excel',
+      escape: false
+    });
+  });
+});
+</script>
+
+
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
@@ -667,10 +658,10 @@ $(document).ready(function(){
 </script> -->
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     jQuery(function ($) {
         $("#exportbtn").click(function () {
-            // parse the HTML table element having an id=exportTable
+           
             var dataSource = shield.DataSource.create({
                 data: "#exportTable",
                 schema: {
@@ -755,7 +746,7 @@ $(document).ready(function(){
         });
     });
 </script>
-
+ -->
 <!-- <script >
   $(document).ready(function() {
     $('#table2').DataTable( {
