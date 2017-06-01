@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -16,6 +13,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.bootstrap3.css">
   
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">  
@@ -157,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 margin-left: auto;
 margin-right: auto;
 border-radius: 50%;
-width: 100%;
+width: 70%;
 position: relative;
 }
 
@@ -222,6 +221,86 @@ font-size: 3vw;
     position: relative;
     top: -6px;
 }
+
+.rank {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    width: 46px;
+    line-height: 19px;
+    height: 20px;
+    text-align: center;
+    box-shadow: inset 0 2px 1px 1px rgba(0,0,0,.1);
+    border-radius: 15px;
+}
+
+.rank-green{
+    
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #91cb3e;
+
+}
+
+
+.rank-orange{
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #f5da24;  
+}
+
+.rank-red{
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #f99d36; 
+}
+
+.rank-green{
+    background: #aada2b;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(170, 218, 43);
+
+}
+
+.divider {
+    border-top: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 15px!important;
+}
+
+
+
+    
+
+
 
 /*#buttons {
   background: #91CB3E;
@@ -422,9 +501,11 @@ font-size: 3vw;
               </div>
               <div class="col-md-3 search-no-padding-right">
                 <input type="text" class="form-control"  name="Location" placeholder="Location" >
+                
               </div>
               <div class="col-md-3">
                 <input type="text" class="form-control" name="Language" placeholder="Language">
+                
               </div>
               <div class="col-md-2" ">
                   <input type="submit"  class="button" value="Find Keyword">
@@ -436,49 +517,54 @@ font-size: 3vw;
       <div class="col-md-12">
 <p class="lead text-center"> Showing suggestion for keyword </p>
             </div>
-            <!-- results-bg -->
+            <!-- results-bg 
+            -->
               <div class="col-md-6 ">
                  <div class="row">
                    <div class="col-sm-12">
-                     <table id="table" data-toggle="table"   class="table table-bordered table-striped">
+                     <table  class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th data-field="state" data-checkbox="true"></th>
-                  <th data-field="Suggestion">Suggestion</th>
-                  <th data-field="Search_Volume" data-toggle="tooltip" data-container="body" title="Average Search Volume">Search Volume<i class="fa fa-question-circle" aria-hidden="true"></i></th>
-                  <th data-field="CPC"  data-toggle="tooltip" data-container="body" title="Average Cost per Click">CPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
-                  <th data-field="PPC"  data-toggle="tooltip" data-container="body"  title="Level of competiton in PPC Advertising">PPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
-                  <th data-field="GKR" data-toggle="tooltip" data-container="body" title="Golden Keyword Ratio">GKR<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+              <th data-field="state" data-checkbox="true"><input type="checkbox" ></th>
+              <th  data-field="Suggestion">Suggestion</th>
+              <th data-toggle="example1"  data-field="Search_Volume"  data-container="body" title="Average Search Volume">Search Volume<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+              <th data-toggle="example1"  data-field="CPC"   data-container="body" title="Average Cost per Click">CPC<i class="fa fa-question-circle" aria-hidden="true"></i></th>
+                <th data-toggle="example1" data-field="GKR"  data-container="body" title="Difficulty based on the Golden Keyword Ratio;
+                 less than 0.25;Excellent  
+                 between 0.25 -1;Good  
+                 greater than 1;not likely">DIFF<i class="fa fa-question-circle" aria-hidden="true"></i></th>
                   <!-- <th>Search Volume</th> -->
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                   <td></td>
+                   <td><input type="checkbox" ></td>
                   <td> Black suits  </td>
                   <!-- <td>test</td> -->
                   <td>500</td>
-                  <td>4.1</td>
-                  <td>1.3</td>
-                  <td>0.25</td>
+                  <td>4.1</td>                 
+                  <td> <span class="rank">0.23</span>  </td>
                   
                 </tr>
                 <tr>
-                  <td></td>
+                  <td><input type="checkbox" ></td>
                   <td>Tuxedo</td>
                   <td>2500</td>
                   <td>4.0</td>
-                  <td>5</td>
-                  <td>0.9</td>
+              
+                  <td><span class="rank">0.35</span></td>
                 </tr>
-                
-                
-                 </tbody>
+                 <tr>
+                  <td><input type="checkbox"></td>
+                  <td>Tuxedo</td>
+                  <td>2500</td>
+                  <td>4.0</td>
+                  
+                  <td><span class="rank">2</span></td>
+                </tr>
+                </tbody>
                 
               </table>
-
-
-
                    </div>
                  </div>
                  <br>
@@ -492,24 +578,28 @@ font-size: 3vw;
 
               <div class="col-md-6 ">
                 <div class="row abox">
-                  <div class="col-sm-3 col-sm-offset-1  ">
+                  <div class="col-sm-4 col-sm-offset-1  ">
 
    <!-- <input type="text" value="0.25" data-min="0" data-min="1" class="dial " disabled="disabled">
     <p class="lead"> Golden Keyword Ratio </p> -->
                     <div class="circle circle-border">
                  <div class="circle-inner">
                 <div class="score-text">
-                 <p> 0.25 </p>
-
+                 <p> 0.23  </p>
+                 
+                <!--  <p class="divider" style="font-size: 5pt"> competitive </p> -->
                 </div>
 
                 </div>
 
               </div>
 
-         <span><p style="font-size: 10.5pt;"> Golden Keyword Ratio </p></span>   
+         <span><p class="text-center"    style="font-size: 10.5pt;"> Golden Keyword Ratio<span class="fa fa-question-circle" data-toggle="gkr" 
+         title="less than 0.25;Excellent  
+                between 0.25 -1;Good  
+                greater than 1;not likely "></span> </p> </span>   
                   </div>
-                  <div class="col-sm-7 col-sm-offset-1  ">
+                  <div class="col-sm-6 col-sm-offset-1  ">
                     <canvas id="bar-chart" width="400" height="250"></canvas>
                   </div>
                 </div>
@@ -579,7 +669,7 @@ font-size: 3vw;
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js"></script>
  <script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript">
@@ -640,12 +730,39 @@ font-size: 3vw;
   });
 });
 </script>
+  
+  <script ></script>
+<script  type="text/javascript">
+  $(document).ready(function(){
+     $('.rank').each(function(){
+       if($(this).text() < "0.25" ){
+         $(this).addClass('rank-green');
+       }
+       if( ($(this).text() > "0.24" )   && ($(this).text()  < "1")  ){
+         $(this).addClass('rank-orange');
+       }
+       if( $(this).text()  > "1"  ){
+         $(this).addClass('rank-red');
+       }    
+       // else if($(this).text() > 0.25 )
+       // {
+       //   $(this).addClass('rank-yellow');
+       // }
+       // else{
+       //  $(this).addClass('rank-red'); 
+       // }
+  });
+});
+ 
+
+</script>
 
 
 <script>
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+    $('[data-toggle="example1"]').tooltip(); 
     $('[data-toggle="example"]').tooltip();
+    $('[data-toggle="gkr"]').tooltip();
 });
 </script>
 
@@ -756,7 +873,13 @@ $(document).ready(function(){
     } );
 } );
 </script> -->
-
+<script >
+   $(document).ready(function() {
+     $('#select-country').selectize();
+     $('#select-language').selectize();
+} );
+  
+</script>
 
 
 <script >

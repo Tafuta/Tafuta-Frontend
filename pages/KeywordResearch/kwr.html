@@ -16,12 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.bootstrap3.css">
+   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect.
-  -->
   <link rel="stylesheet" href="../../dist/css/skins/skin-blue.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,26 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
    <style type="text/css">
@@ -372,10 +350,24 @@ desired effect
               <input type="text" class="form-control" name="keyword-search" placeholder="Keyword" >
               </div>
               <div class="col-md-3 search-no-padding-right">
-                <input type="text" class="form-control"  name="Location" placeholder="Location" >
+                <!-- <input type="text" class="form-control"  name="Location" placeholder="Location" > -->
+                 <select  id="select-country" placeholder="Country">
+                <option value="AF">Country</option>
+                <option value="GH">Ghana</option>
+                <option value="KE">Kenya</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+
+                </select>
               </div>
               <div class="col-md-3">
-                <input type="text" class="form-control" name="Language" placeholder="Language">
+                <!-- <input type="text" class="form-control" name="Language" placeholder="Language"> -->
+                <select id="select-language" class="form-control" placeholder="Language">
+                  <option>Select language</option>
+                  <option>English </option>
+                  <option>French</option>
+                  <option>Spanish</option>
+                </select>
               </div>
               <div class="col-md-2">
                   <input type="submit"  class="button" value="Find Keyword">
@@ -520,10 +512,17 @@ desired effect
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/app.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+     <script >
+   $(document).ready(function() {
+     $('#select-country').selectize();
+     $('#select-language').selectize();
+} );
+  
+</script>
 </body>
 </html>
